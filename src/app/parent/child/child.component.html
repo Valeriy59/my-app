@@ -1,0 +1,8 @@
+<div>
+  <h4>
+    Child - {{ name }} {{ surnameProps }} from from {{ address?.city }} {{ address?.street }}
+    {{ address?.house }}
+  </h4>
+  <input [(ngModel)]="inputGrade" />
+  <button (click)="sendGradeHandler()">send grade</button>
+</div>

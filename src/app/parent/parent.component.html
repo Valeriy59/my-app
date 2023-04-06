@@ -1,0 +1,26 @@
+<div>
+  <h3>
+    Parent - {{ name }} {{ surname }} from {{ address.city }} {{ address.street }}
+    {{ address.house }}
+  </h3>
+  <inst-child
+    [surnameProps]="surname"
+    [address]="address"
+    (sendGradeEvent)="getGrade($event)"
+  ></inst-child>
+  <h3>{{ grades | json }}</h3>
+  <hr />
+  <h2>*ngFor</h2>
+  <div *ngFor="let el of grades; index as i; count as count; even as even">
+    {{ i }}: {{ el }} count: {{ count }} even: {{ even }}
+  </div>
+  <div *ngFor="let lesson of lessons">
+    <h3>{{ lesson.title }}</h3>
+    <div>
+      <h3>
+        weekGrades
+        <div *ngFor="let grade of lesson.weekGrades">{{ grade.gradeItem }}</div>
+      </h3>
+    </div>
+  </div>
+</div>
